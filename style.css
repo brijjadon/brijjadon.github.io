@@ -1,9 +1,16 @@
-/* HERO SECTION */
+/* GENERAL STYLES */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #0f172a;
+  color: #e5e7eb;
+}
+
+/* HERO SECTION WITH DEVOPS IMAGE & GRADIENT */
 .hero {
   position: relative;
   height: 100vh;
-  background: url('https://images.unsplash.com/photo-1581090700227-1e37b190418e')
-              center/cover no-repeat;
+  background: linear-gradient(135deg, #0f172a, #1e3a8a, #2563eb);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -12,13 +19,13 @@
 .overlay {
   position: absolute;
   inset: 0;
-  background: rgba(2, 6, 23, 0.8);
+  background: rgba(2,6,23,0.6); /* semi-transparent overlay for clarity */
 }
 
 .hero-content {
   position: relative;
   text-align: center;
-  color: #fff;
+  color: #ffffff;
 }
 
 .hero-content img {
@@ -26,49 +33,110 @@
   border-radius: 50%;
   border: 4px solid #38bdf8;
   margin-bottom: 15px;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+  40% {transform: translateY(-15px);}
+  60% {transform: translateY(-7px);}
 }
 
 .hero-content h1 {
   font-size: 42px;
+  margin-bottom: 5px;
+  animation: fadeDown 1s ease forwards;
 }
 
 .hero-content h2 {
+  font-size: 22px;
   color: #38bdf8;
+  margin-bottom: 10px;
+  animation: fadeDown 1.2s ease forwards;
 }
 
-/* FADE IN ANIMATION */
+.hero-content p {
+  font-size: 18px;
+  color: #c7d2fe;
+  animation: fadeDown 1.5s ease forwards;
+}
+
+@keyframes fadeDown {
+  from {opacity: 0; transform: translateY(-20px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+/* FADE IN FOR SECTIONS */
 .fade-in {
-  animation: fadeUp 1.2s ease forwards;
+  opacity: 0;
+  animation: fadeInUp 1s ease forwards;
 }
 
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+@keyframes fadeInUp {
+  from {opacity: 0; transform: translateY(40px);}
+  to {opacity: 1; transform: translateY(0);}
 }
 
-/* ABOUT */
+/* ABOUT SECTION */
 .about {
   max-width: 900px;
-  margin: auto;
+  margin: 50px auto;
+  text-align: center;
 }
 
-/* EXPERIENCE CARDS */
+/* EXPERIENCE SECTION */
+.experience {
+  max-width: 950px;
+  margin: 50px auto;
+}
+
 .card {
-  background: #0f172a;
+  background: #1e293b;
   padding: 25px;
   margin: 25px auto;
-  max-width: 900px;
   border-radius: 14px;
   box-shadow: 0 15px 30px rgba(0,0,0,0.5);
-  transition: transform 0.3s ease;
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
   transform: translateY(-8px);
+  box-shadow: 0 25px 50px rgba(0,0,0,0.6);
+}
+
+.card h3 {
+  color: #38bdf8;
+}
+
+.card span {
+  font-size: 14px;
+  color: #94a3b8;
+}
+
+.card ul {
+  margin-top: 10px;
+}
+
+.card ul li {
+  margin-bottom: 8px;
+}
+
+/* CONTACT SECTION */
+.contact {
+  margin: 50px auto;
+  text-align: center;
+}
+
+.contact a {
+  color: #38bdf8;
+  text-decoration: none;
+}
+
+/* FOOTER */
+footer {
+  padding: 20px;
+  background: #020617;
+  text-align: center;
+  color: #94a3b8;
 }
